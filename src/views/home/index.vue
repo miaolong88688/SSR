@@ -3,39 +3,39 @@
 </template>
 <script>
 
-import * as connectURL from "@/http/common/connectURL";
-import * as mutationTypes from "@/vuex/mutations/types";
-import * as actionTypes from "@/vuex/actions/types";
-import { 
-  mapState, 
-  mapGetters, 
-  mapMutations, 
-  mapActions 
-} from "vuex";
+import * as connectURL from '@/http/common/connectURL'
+import * as mutationTypes from '@/vuex/mutations/types'
+import * as actionTypes from '@/vuex/actions/types'
+import {
+  mapState,
+  mapGetters,
+  mapMutations,
+  mapActions
+} from 'vuex'
 
 export default {
-  name: "home",
-  data() {
+  name: 'home',
+  data () {
     return {
       isShow: false,
       msg: 'Hello Word'
-    };
-  },
-  computed: {
-    ...mapState(["count"]),
-    ...mapGetters(["calcNumber"]),
-    currentComputed() {
-      return this.msg;
     }
   },
-  mounted() {
+  computed: {
+    ...mapState(['count']),
+    ...mapGetters(['calcNumber']),
+    currentComputed () {
+      return this.msg
+    }
+  },
+  mounted () {
     this.$http(connectURL.DEMO)
-    .then(res => {
-      console.log( res )
-    })
-    .catch(err => {
-      this.$toast.show(err.message);
-    })
+      .then(res => {
+        console.log(res)
+      })
+      .catch(err => {
+        this.$toast.show(err.message)
+      })
   },
   methods: {
     ...mapMutations({
@@ -44,11 +44,11 @@ export default {
     ...mapActions({
       triggerAction: actionTypes.SET_ACTION_DEFAULT
     }),
-    show() {
-      this.isShow = true;
+    show () {
+      this.isShow = true
     }
   }
-};
+}
 </script>
 
 <style lang="less" src="./index.less"> </style>

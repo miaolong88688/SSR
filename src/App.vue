@@ -20,38 +20,38 @@
 </template>
 
 <script>
-import * as mutationTypes from "@/vuex/mutations/types";
-import * as actionTypes from "@/vuex/actions/types";
-import * as connectURL from "@/http/common/connectURL";
-import { 
-  mapState, 
-  mapGetters, 
-  mapMutations, 
-  mapActions 
-} from "vuex";
+import * as mutationTypes from '@/vuex/mutations/types'
+import * as actionTypes from '@/vuex/actions/types'
+// import * as connectURL from '@/http/common/connectURL'
+import {
+  mapState,
+  mapGetters,
+  mapMutations,
+  mapActions
+} from 'vuex'
 
 export default {
-  name: "app",
+  name: 'app',
 
-  data() {
+  data () {
     return {
-      msg: "欢迎来到Vue"
-    };
+      msg: '欢迎来到Vue'
+    }
   },
 
   computed: {
     ...mapState([
-      "count", 
-      "isShowLoading", 
-      "isShowToast", 
-      "toastText"
+      'count',
+      'isShowLoading',
+      'isShowToast',
+      'toastText'
     ]),
     ...mapGetters([
-      "calcNumber"
+      'calcNumber'
     ])
   },
 
-  mounted() {},
+  mounted () {},
 
   methods: {
     ...mapMutations({
@@ -63,7 +63,7 @@ export default {
   },
 
   watch: {}
-};
+}
 </script>
 
 <style lang="less">

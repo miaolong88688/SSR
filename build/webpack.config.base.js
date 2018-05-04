@@ -30,7 +30,8 @@ const config = {
               rootValue:75, // 根字体大小
               unitPrecision: 3 // 渲染单位小数个数
             })
-          ]
+          ],
+          hotReload: true
         }
       },
       {

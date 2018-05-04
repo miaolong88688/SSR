@@ -1,12 +1,12 @@
-import Vue from 'vue';
+import Vue from 'vue'
 
-const bus = new Vue();
+const bus = new Vue()
 
 const busType = {
-    DEFAULT: "DEFAULT"
+  DEFAULT: 'DEFAULT'
 }
 
 export {
-    bus,
-    busType
+  bus,
+  busType
 }
