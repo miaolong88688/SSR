@@ -21,27 +21,34 @@
 **src开发环境**
 
 ```
+--- ./build 
+        |--- ./webpack.config.base.js (base配置)
+        |--- ./webpack.config.dll.js (打包三方模块配置)
+        |--- ./webpack.config.dev.js (开发环境配置)
+        |--- ./webpack.config.prod.js (生产配置)
 --- ./src
-    |--- ./assets (静态资源)
-    |--- ./bus (全局通讯)
-    |--- ./components (组件目录)
-    |--- ./config (配置)
-    |--- ./http (网络配置请求)
-    |--- ./less(css预编译)
-    |--- ./lib(外部库文件)
-    |--- ./modules(模块)
-    |--- ./router(路由)
-    |--- ./utils(工具)
-    |--- ./views(视图)
-    |--- ./vuex(状态管理)
-    |--- ./App.vue(root挂载点)
-    |--- ./main.js(入口)
+        |--- ./assets (静态资源)
+        |--- ./bus (全局通讯)
+        |--- ./components (组件)
+        |--- ./config (配置)
+        |--- ./http (网络配置请求)
+        |--- ./less(css预编译)
+        |--- ./lib(外部库文件)
+        |--- ./modules(模块)
+        |--- ./router(路由)
+        |--- ./utils(工具)
+        |--- ./views(视图)
+        |--- ./vuex(状态管理)
+        |--- ./App.vue(root挂载点)
+        |--- ./main.js(入口)
 ```
 
 ### 相关链接
-
 [mcx-ui: <https://www.npmjs.com/package/mcx-ui>]
 
 [webpack: <http://www.css88.com/doc/webpack/guides/output-management>]
 
 [vue: <https://cn.vuejs.org/>]
+
+### 开发者
+Email: miaolong88688@163.com

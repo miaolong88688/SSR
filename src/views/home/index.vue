@@ -1,7 +1,5 @@
 <template>
-    <div class="home">
-      SSR
-    </div>
+    <div class="home" v-text="currentComputed"></div>
 </template>
 <script>
 
@@ -19,7 +17,8 @@ export default {
   name: "home",
   data() {
     return {
-      isShow: false
+      isShow: false,
+      msg: 'Hello Word'
     };
   },
   computed: {
@@ -30,16 +29,12 @@ export default {
     }
   },
   mounted() {
-    // this.$http('/company/getCompanyByUserId?userId=1')
-    // .then(res => {
-    //   console.log( res )
-    // })
-    // .catch(err => {
-    //   this.$toast.show(err.message);
-    // })
-    this.$http("http://192.168.103.104:3000/")
+    this.$http(connectURL.DEMO)
     .then(res => {
       console.log( res )
+    })
+    .catch(err => {
+      this.$toast.show(err.message);
     })
   },
   methods: {

@@ -1,9 +1,9 @@
 import axios from 'axios';
-import axiosConfig from '@/http/common/axiosConfig';
+const axiosConfig = require('@/http/common/axiosConfig');
 import store from '@/vuex';
 import * as mutationTypes from "@/vuex/mutations/types";
 
-const _axios = axios.create(axiosConfig);
+const _axios = axios.create(axiosConfig.default);
 const http = {};
 
 // 请求拦截
@@ -53,7 +53,8 @@ const fetch = (url, options) => {
             resolve(res);
         })
         .catch( err => {
-            reject({ 'code': '-100', 'message': '网络异常或参数错误！' });
+            // reject({ 'code': '-100', 'message': '网络异常或参数错误！' });
+            reject(err);
         });
     })
 }
