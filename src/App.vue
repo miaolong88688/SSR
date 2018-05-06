@@ -8,11 +8,11 @@
 
 
     <!-- 全局组件 start -->
-    <mc-loading 
+    <mc-loading
       :isShow="isShowLoading"
     ></mc-loading>
-    <mc-toast 
-      :isShow="isShowToast" 
+    <mc-toast
+      :isShow="isShowToast"
       :isText="toastText"
     ></mc-toast>
     <!-- 全局组件 end -->

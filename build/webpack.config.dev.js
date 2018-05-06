@@ -34,6 +34,12 @@ devConfig = merge(baseConfig, {
       }
     ]
   },
+  optimization: { // 替代 CommonsChunkPlugin
+    splitChunks: {
+      chunks: 'all'
+    },
+    runtimeChunk: true
+  },
   plugins: [
     new ExtractTextPlugin('assets/css/main.css?[hash]'),
     new OptimizeCSSPlugin({
@@ -55,16 +61,17 @@ devConfig = merge(baseConfig, {
     new webpack.LoaderOptionsPlugin({
       minimize: true
     }),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'common', // 选择入口处打包的文件名称
-      filename: 'assets/js/[name]-[id].js?[hash:8]' // 被打包好的文件路径及公共模块名称
-    }),
-    new webpack.SourceMapDevToolPlugin({
-      filename: '[file].map',
-      include: ['main.js'],
-      exclude: ['vendor.js'],
-      column: false
-    }),
+    // 提取公共基础库 // webpack4 取消
+    // new webpack.optimize.CommonsChunkPlugin({
+    //   name: ['vendor'],
+    //   filename: 'assets/js/[name]-[id].js?[hash:8]' + (+new Date())
+    // }),
+    // new webpack.SourceMapDevToolPlugin({
+    //   filename: '[file].map',
+    //   include: ['main.js'],
+    //   exclude: ['vendor.js'],
+    //   column: false
+    // }),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: '"development"'

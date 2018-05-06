@@ -19,8 +19,8 @@ fastclick()
 
 let vm = new Vue({
   el: '#app',
-  router,
   store,
+  router,
   render: h => h(App)
 })
 

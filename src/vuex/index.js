@@ -25,7 +25,7 @@ const Store = new Vuex.Store({
       return val
     }
   },
-  mutations: mutations(this.state),
+  mutations: mutations(),
   actions: actions()
 })
 
