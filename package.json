@@ -7,13 +7,15 @@
   "private": true,
   "scripts": {
     "dll": "cross-env webpack -p --config build/webpack.config.dll.js --progress --profile --colors",
-    "dev": "cross-env NODE_ENV=dev webpack-dev-server --config build/webpack.config.dev.js --open --hot --inline --host 0.0.0.0",
+    "dev:client": "cross-env NODE_ENV=dev webpack-dev-server --config build/webpack.config.dev.js --open --hot --inline --host 0.0.0.0",
+    "dev:server": "cross-env NODE_ENV=dev node server/server.js",
     "beta": "cross-env NODE_ENV=beta webpack --progress --config build/webpack.config.prod.js --hide-modules",
     "test": "cross-env NODE_ENV=test webpack --progress --config build/webpack.config.prod.js --hide-modules",
     "prod": "cross-env NODE_ENV=prod webpack --progress --config build/webpack.config.prod.js --hide-modules",
     "html": "cross-env python main.py",
-    "lint": "eslint --ext .js --ext .vue src/",
-    "lint-fix": "eslint --fix --ext .js --ext .vue src/"
+    "lint": "eslint --ext .js --ext .vue client/",
+    "lint-fix": "eslint --fix --ext .js --ext .vue client/",
+    "server": "cross-env NODE_ENV=dev node build/webpack.config.server.js"
   },
   "browserslist": [
     "defaults",
@@ -25,19 +27,24 @@
   ],
   "dependencies": {
     "axios": "^0.17.1",
+    "ejs": "^2.6.1",
     "fastclick": "^1.0.6",
     "font-awesome": "^4.7.0",
-    "html-webpack-include-assets-plugin": "^1.0.4",
-    "inline-manifest-webpack-plugin": "^3.0.1",
     "jscalc": "0.0.4",
+    "koa": "^2.5.1",
+    "koa-router": "^7.4.0",
     "mcx-ui": "^1.1.2",
     "os": "^0.1.1",
     "vue": "^2.4.4",
     "vue-router": "^3.0.1",
+    "vue-server-renderer": "^2.5.13",
     "vuex": "^3.0.1"
   },
   "devDependencies": {
+    "html-webpack-include-assets-plugin": "^1.0.4",
+    "inline-manifest-webpack-plugin": "^3.0.1",
     "autoprefixer": "^7.2.3",
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.3",
     "babel-loader": "^7.1.2",
@@ -63,6 +70,7 @@
     "html-webpack-plugin": "^2.30.1",
     "less": "^2.7.3",
     "less-loader": "^4.0.5",
+    "memory-fs": "^0.4.1",
     "optimize-css-assets-webpack-plugin": "^3.2.0",
     "postcss-loader": "^2.0.9",
     "postcss-plugin-px2rem": "^0.7.0",

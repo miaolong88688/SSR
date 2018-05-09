@@ -14,6 +14,6 @@ else:
     result = mammoth.convert_to_html(docx)
     html = result.value
 
-    w = open("./src/assets/word/opt/%s.js"%(name), "w")
-    
+    w = open("./client/assets/word/opt/%s.js"%(name), "w")
+
     w.write("let result = '%s'\n\nexport default result"%html)

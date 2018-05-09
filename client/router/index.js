@@ -9,7 +9,7 @@ const router = new Router({
 })
 
 router.beforeEach((to, from, next) => {
-  window.document.title = to.meta.title
+  // window.document.title = to.meta.title
   next() // 可接受参数重定向
 })
 

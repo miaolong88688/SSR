@@ -18,7 +18,7 @@ export default {
   data () {
     return {
       isShow: false,
-      msg: 'Hello Words'
+      msg: 'Hello Wordssss'
     }
   },
   computed: {

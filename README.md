@@ -18,15 +18,15 @@
 
 ### 开发要求/原则
 
-**src开发环境**
+**client开发环境**
 
 ```
---- ./build 
+--- ./build
         |--- ./webpack.config.base.js (base配置)
         |--- ./webpack.config.dll.js (打包三方模块配置)
         |--- ./webpack.config.dev.js (开发环境配置)
         |--- ./webpack.config.prod.js (生产配置)
---- ./src
+--- ./client
         |--- ./assets (静态资源)
         |--- ./bus (全局通讯)
         |--- ./components (组件)
